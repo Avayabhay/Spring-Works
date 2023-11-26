@@ -21,7 +21,7 @@ public class CrudDemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 		return runner -> {
 			//creating student
-			//createStudent(studentDAO);
+			createStudent(studentDAO);
 
 			//read Student
 			//readStudent(studentDAO);
@@ -36,8 +36,17 @@ public class CrudDemoApplication {
 			//updateStudentName(studentDAO);
 
 			//Delete the Student
-			deleteStudentByID(studentDAO);
+			//deleteStudentByID(studentDAO);
+
+			//Delete All the entries
+			deleteAllStudent(studentDAO);
 		};
+	}
+
+	private void deleteAllStudent(StudentDAO studentDAO) {
+		System.out.println("Deleting All Students!");
+		int rows = studentDAO.deleteStudentAll();
+		System.out.println("DELETED");
 	}
 
 	private void deleteStudentByID(StudentDAO studentDAO) {
