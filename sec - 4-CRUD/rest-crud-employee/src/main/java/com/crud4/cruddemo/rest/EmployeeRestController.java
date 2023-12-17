@@ -1,9 +1,9 @@
 package com.crud4.cruddemo.rest;
 
 
-import com.crud4.cruddemo.dao.EmployeeDAO;
-import com.crud4.cruddemo.dao.EmployeeDAOJpaImpl;
 import com.crud4.cruddemo.entity.Employee;
+import com.crud4.cruddemo.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,17 +14,18 @@ import java.util.List;
 @RequestMapping("/")
 public class EmployeeRestController {
 
-    private EmployeeDAO employeeDAO;
+    private EmployeeService employeeService;
     //quick and dirty: inject employeeDAO
- 
-    public EmployeeRestController(EmployeeDAO employeeDAO) {
-        this.employeeDAO = employeeDAO;
+
+    @Autowired
+    public EmployeeRestController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
     //expose the /employees to get the list of employees
     @GetMapping("/employees")
     public List<Employee> findAll(){
-        return employeeDAO.findAl();
+        return employeeService.findAll();
     }
 
 }
