@@ -30,7 +30,7 @@ public class EmployeeRestController {
     }
 
     //exposing the API to get single Employee
-    @GetMapping("/employee/{employeeId}")
+    @GetMapping("/employees/{employeeId}")
     public Employee getEmployee(@PathVariable int employeeId){
         Employee theEmployee = employeeService.findById(employeeId);
 
