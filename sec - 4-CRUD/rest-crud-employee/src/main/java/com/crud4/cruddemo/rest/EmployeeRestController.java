@@ -50,4 +50,12 @@ public class EmployeeRestController {
 
     }
 
+    //exposing the end point to update an EMployee
+    @PutMapping("employees")
+    public Employee updateEmployee(@RequestBody Employee theEmployee){
+        Employee updatedEmployee = this.employeeService.save(theEmployee);
+        return updatedEmployee;
+                
+    }
+
 }
