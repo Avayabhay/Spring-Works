@@ -55,7 +55,13 @@ public class EmployeeRestController {
     public Employee updateEmployee(@RequestBody Employee theEmployee){
         Employee updatedEmployee = this.employeeService.save(theEmployee);
         return updatedEmployee;
-                
+
+    }
+
+    //exposing the endpoint to delete an employee
+    @DeleteMapping("employees/{employeeID}")
+    public void deleteEmployee(@PathVariable int employeeID){
+        this.employeeService.deleteEmployee(employeeID);
     }
 
 }
