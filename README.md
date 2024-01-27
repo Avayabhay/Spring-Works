@@ -69,3 +69,29 @@ SecurityFilterChain is the function that takes HTTPSecurity as input which calls
 
 httpBasic()
 Csfr (Cross Site Request Forgery) can be disabled for stateless REST API![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/868722eb-648b-4c41-86c0-a3a8ec548fbb)
+
+
+So far we have the user and their roles details hard coded. But in real life this information is stored in Database.
+So, now we will learn about authorizing the user based on the details read from the database.
+
+Spring Security can read the user account info from database.
+By default, we have to follow the Spring Security's predefined table scheme.
+We can also customize the table schemes and then we will be responsible for writing the code to access the data using JDBC, Hibernate, etc and also read the user roles. In this course we wont be using the custom schema but the spring security's out of the box feature.
+
+Steps:
+
+
+
+We need to create 2 tables as:
+
+Also note that the name should be exact same. Reference key is username.
+
+
+To authorize the user by reading info from data base, we comment/remove the code creating hard-coded user.
+Then we use the UserDetailsManager()  function that takes a datasource(which is auto-wired) and returns JdbcUserDetailsManager. That all that we have to do!
+Now the app read details from user and authenticates and authorizes the user based on the details from the Database.
+ 
+
+
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/000e3c3d-9ca0-4062-9ebb-b3de30e46f41)
+
