@@ -95,3 +95,18 @@ Now the app read details from user and authenticates and authorizes the user bas
 
 ![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/000e3c3d-9ca0-4062-9ebb-b3de30e46f41)
 
+
+In the above lectures/codes, we store password as a simple/plain text. Now If any hacker gets access of the Database he will have access to the passwords. So, we should always encrypt the password before saving it. In this course we will use bcrypt for this and bcrypt is the recommended way of storing password by spring.
+
+The spring security login process:
+
+Note: bcrypt is a one-way algorithm. Passwords from the database is never decrypted. But the password enter by the user is encrypted and then compared with encrypted password stored in the database.
+
+To do so, we just have to changes {noop} -> {bcrypt} in the database for the users. Also the password now stored in encrypted by bcrypt. Eg of the store password :
+{bcrypt}$2a$10$jfpwgA6IJ7QlG7UAARxtkeG6AavhVawFJf8pj8O8aGlD1eRKxZCwW
+
+Here, the first part tells that we are using brcypt to encrypt the password. {noop} means no opertation, menaing storing the pwd as a plain text.
+
+Rest Spring handles everything on its own(dont know how need to do some research).![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/d806dbac-2e1a-45a3-9989-5d4829b58df3)
+
+
