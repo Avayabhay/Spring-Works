@@ -110,3 +110,24 @@ Here, the first part tells that we are using brcypt to encrypt the password. {no
 Rest Spring handles everything on its own(dont know how need to do some research).![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/d806dbac-2e1a-45a3-9989-5d4829b58df3)
 
 
+	Now we will use Spring Security to use Custom Tables:
+	To use Custom Table, we need to tell springBoot how to find users and roles
+	
+	
+	We tell spring about the user :
+	jdbcUserDetailsManager.setUsersByUsernameQuery(
+	"selectuser_id,pw,activefrommemberswhereuser_id=?"
+	);
+	
+	In the above code, the "?" will be populated by the form while login
+	
+	For Roles:
+	jdbcUserDetailsManager.setUsersByUsernameQuery(
+	"selectuser_id,rolefrommemberswhereuser_id=?"
+	);
+	 Note: The Custom Table used are : members & roles
+	
+	That's all the changes we need to do.
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/d805d18d-e2f0-468f-840d-cb077abb9e0a)
+
+
