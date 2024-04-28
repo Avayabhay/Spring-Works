@@ -13,13 +13,21 @@
 
 <div class="main">
     <h1>Log in Page</h1>
-<!--    Error in case of invalid login-->
 
+<!--    Error in case of invalid login-->
     <div th:if="${param.error}" >
        <div class="failed">
         Sorry Wrong Credentials!! please enter correct ones!
        </div>
     </div>
+
+<!--    Logged out message incase of being logged out-->
+    <div th:if="${param.logout}" >
+        <div class="failed">
+            The user has been logged out! Please sign in!!
+        </div>
+    </div>
+
     <h3>Enter your login credentials</h3>
     <form  th:action="@{/authenticateTheUser}" method="POST" >
         <label for="username">
