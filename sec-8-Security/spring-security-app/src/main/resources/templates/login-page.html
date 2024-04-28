@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML 5 Boilerplate</title>
+    <style>
+        .failed{
+            color : red;
+        }
+    </style>
 </head>
 <body>
 
 <div class="main">
     <h1>Log in Page</h1>
+<!--    Error in case of invalid login-->
+
+    <div th:if="${param.error}" >
+       <div class="failed">
+        Sorry Wrong Credentials!! please enter correct ones!
+       </div>
+    </div>
     <h3>Enter your login credentials</h3>
     <form  th:action="@{/authenticateTheUser}" method="POST" >
         <label for="username">
