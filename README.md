@@ -131,3 +131,39 @@ Rest Spring handles everything on its own(dont know how need to do some research
 ![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/d805d18d-e2f0-468f-840d-cb077abb9e0a)
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Section 8- MVC Security
+
+
+Adding Custom Login Page
+
+	![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/556b640e-1662-485e-a8ce-02f4f6b9eef8)
+
+	We take the HttpSecurity as input paramter and then use the authorizeHttpRequests() to configure it as shown
+	
+	
+	We create the login-page.html for logging in the user.
+	Note: the fields should be "username" & "password" for the inputs.
+	
+	After the form is created make sure that the action is set to :
+	![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/5b6ff539-40c2-42de-889d-6e42c17f18dc)
+
+	
+	Note: action  is given by html but it will not used in our, rather we have to put th:action for it to work
+	Also, the @{/}  as points to relative path to root.
+	Also /authenticateTheUser will automatically authenicate the user based on the security config.
+	
+	
+	Now, we will show error in case of invalid authentication:
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/a9f5e3a8-cab4-49aa-abf5-b9ecae0972c1)
+
+ 
+	If there is any error message, the error parameter is set, else its null
+	Error parameter is passed by spring security automatically incase of error
+	
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/10b4e372-8342-4a5f-8134-e23aa92b2120)
+
+
+
