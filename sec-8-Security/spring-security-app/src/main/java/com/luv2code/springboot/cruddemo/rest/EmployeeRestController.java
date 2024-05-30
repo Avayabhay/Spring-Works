@@ -19,8 +19,20 @@ public class EmployeeRestController {
         return "login-page";
     }
 
+    //    Adding the API /leaders
+    @GetMapping("/leaders")
+    public String showLeaders(){
+        return "leaders";
+    }
 
+
+    //    Adding the API /systems
+    @GetMapping("/systems")
+    public String showSystems(){
+        return "systems";
+    }
 }
+
 
 
 

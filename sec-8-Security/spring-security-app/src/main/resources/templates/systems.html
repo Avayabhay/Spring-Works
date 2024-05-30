@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>systems</title>
+</head>
+<body>
+
+<div>
+
+    THIS IS Systems Page!!!
+    <div>This is secret that is only available to the Admins.
+    </div>
+    <br>
+    <br>
+    Regular Employees should not access it
+    <hr>
+    <a th:href="@{/}">Go Back</a>
+</div>
+</body>
+</html>
