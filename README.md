@@ -165,5 +165,53 @@ Adding Custom Login Page
 	
 ![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/10b4e372-8342-4a5f-8134-e23aa92b2120)
 
+	
+	Logout:
+	Now we will be logging out the user and show the logout message.
+	
+	TO log out the user we need to do the following in the Security Configuration
+	
+	
+	And add the following in the UI(html)
+	
+	Note: we put the action ="/logout" which is given and handled by SpringBoot
+	
+	Also if the user is logged out, springboot adds a logout  parameter to the param same as in error as:
+	
+	
+
+Print the Username and Role:
+Fist of all add the following dependency to the pom.xml file. 
+Note: this was not mentioned in the course, I had a hard time figuing it out:
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+
+And then to display the username and password:
+
+
+
+
+
+
+
+Restricting access based on roles
+
+
+
+The full code:
+
+
+
+Custom access denied Page :
+
+
+We need to create the "access-denied" api in the controller
+
+
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/5e57ad21-4391-4455-95b6-c54bcc0a83f4)
+
+
 
 
