@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>HTML 5 Boilerplate</title>
@@ -9,7 +10,18 @@
 <div>
 
     THIS IS HOMEPAGE!!!
+
+    <hr>
+<!--Display user and role-->
+    User : <span sec:authentication="principal.username">
+    </span>
+    <br>
+    <br>
+    Roles : <span sec:authentication="principal.authorities" ></span>
+
+    <hr>
 </div>
+
 
 <form action="#" th:action="@{/logout}" method="post">
 <!--    <label>LOG OUT</label>-->
