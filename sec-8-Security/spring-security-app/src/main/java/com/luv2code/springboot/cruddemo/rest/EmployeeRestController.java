@@ -31,6 +31,12 @@ public class EmployeeRestController {
     public String showSystems(){
         return "systems";
     }
+
+    //    Adding the API /systems
+    @GetMapping("/access-denied")
+    public String accessDenied(){
+        return "access-denied";
+    }
 }
 
 
