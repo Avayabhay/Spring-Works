@@ -21,8 +21,8 @@
 
     <hr>
 
-
-    <div>
+<!--Onlyb for the Managers-->
+    <div sec:authorize="hasRole('MANAGER')">
 
         <a th:href="@{/leaders}">
             Leadership Meeting
@@ -30,8 +30,9 @@
     </div>
     <hr>
     <br>
-    <div>
 
+<!--    Only for the Admins-->
+    <div sec:authorize="hasRole('ADMIN')">
         <a th:href="@{/systems}">
             IT System - Admins only
         </a>
