@@ -214,4 +214,24 @@ We need to create the "access-denied" api in the controller
 
 
 
+JDBC
+Spring security has default schema for login - users and authorities.
+Previously we hard coded the users and the roles that we being used of authorization but now
+We will fetch the data from database and based on the same we will authorize the users.
+To do so, first we need to add the following dependency to the pom file:
+We also need to add the spring-boot-starter-data-jpa.
+ we are added the jdbc driver that is mysql.
+
+
+Next we need to configure the properties as :
+	
+	
+Now we need to use the jdbc authentication as :
+
+Notice the datasource is being autoconfigured
+
+
+Just Mentioning: We can see the relationship between different table using some menu
+Check lec 260 for same
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/55b48da2-0e2a-4824-9cff-25ce08c5a92c)
 
