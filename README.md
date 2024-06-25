@@ -235,3 +235,15 @@ Just Mentioning: We can see the relationship between different table using some 
 Check lec 260 for same
 ![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/55b48da2-0e2a-4824-9cff-25ce08c5a92c)
 
+Password Encryption
+
+
+The above is the changes for using the encrypting the pass.
+Please check more about encrypting the password. Here, we are only reading the encrypted password
+And thats all we are doing. I'm not sure how but springboot itself is encrypting our plain/text password and comparing with the encrypted password in the Database. 
+
+In the above, the first part denotes the encryption.
+
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/8712db45-c767-46b3-b71c-5e045101f112)
+
+
