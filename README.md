@@ -246,4 +246,11 @@ In the above, the first part denotes the encryption.
 
 ![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/8712db45-c767-46b3-b71c-5e045101f112)
 
+Authentication using Custom Tables - lec 267
+
+
+
+We need to tell spring boot to find the table as shown in the above diagram.
+We need to tell provide query to find user by username and also to find authorities/roles by user name a shown in the above snap
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/b5b3b603-b8b2-4cf7-8855-f2d19fb78273)
 
