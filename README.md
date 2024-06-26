@@ -214,4 +214,43 @@ We need to create the "access-denied" api in the controller
 
 
 
+JDBC
+Spring security has default schema for login - users and authorities.
+Previously we hard coded the users and the roles that we being used of authorization but now
+We will fetch the data from database and based on the same we will authorize the users.
+To do so, first we need to add the following dependency to the pom file:
+We also need to add the spring-boot-starter-data-jpa.
+ we are added the jdbc driver that is mysql.
+
+
+Next we need to configure the properties as :
+	
+	
+Now we need to use the jdbc authentication as :
+
+Notice the datasource is being autoconfigured
+
+
+Just Mentioning: We can see the relationship between different table using some menu
+Check lec 260 for same
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/55b48da2-0e2a-4824-9cff-25ce08c5a92c)
+
+Password Encryption
+
+
+The above is the changes for using the encrypting the pass.
+Please check more about encrypting the password. Here, we are only reading the encrypted password
+And thats all we are doing. I'm not sure how but springboot itself is encrypting our plain/text password and comparing with the encrypted password in the Database. 
+
+In the above, the first part denotes the encryption.
+
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/8712db45-c767-46b3-b71c-5e045101f112)
+
+Authentication using Custom Tables - lec 267
+
+
+
+We need to tell spring boot to find the table as shown in the above diagram.
+We need to tell provide query to find user by username and also to find authorities/roles by user name a shown in the above snap
+![image](https://github.com/Avayabhay/Spring-Works/assets/39983140/b5b3b603-b8b2-4cf7-8855-f2d19fb78273)
 
