@@ -4,9 +4,20 @@ export const AddUser = () => {
   const returnToHome = () => {};
 
   //Hookes
-  const [username, setUsername] = useState("");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+
+  const [user, setUser] = useState({
+    name: "",
+    username: "",
+    email: "",
+  });
+
+  const onUserChange = (e) => {
+    // console.log(user, setUser, username);
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
 
   return (
     <div className="container ">
@@ -23,8 +34,9 @@ export const AddUser = () => {
             placeholder="Name"
             name="name"
             className="p-1 bg-cyan-100 border border-cyan-400 rounded-md mx-4 w-80"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={user?.name}
+            // onChange={(e) => setName(e.target.value)}
+            onChange={(e) => onUserChange(e)}
           />
         </div>
       </div>
@@ -38,8 +50,9 @@ export const AddUser = () => {
             placeholder="username"
             name="username"
             className="p-1 bg-cyan-100 border border-cyan-400 rounded-md mx-4 w-80"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={user.username}
+            // onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => onUserChange(e)}
           />
         </div>
       </div>
@@ -51,10 +64,11 @@ export const AddUser = () => {
           <input
             type="text"
             placeholder="E-mail"
-            name="mail"
+            name="email"
             className="p-1 bg-cyan-100 border border-cyan-400 rounded-md mx-4 w-80"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={user?.email}
+            // onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => onUserChange(e)}
           />
         </div>
       </div>
